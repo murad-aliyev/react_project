@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import Header from '../../components/Header/Header';
 import './ListPage.css';
 
 const ListPage = () => {
@@ -9,7 +10,10 @@ const ListPage = () => {
     const {state} = useLocation()
 
     return (
+        <>
+        <Header/>
         <div className="list-page">
+            
             <h1 className="list-page__title">{state.title}</h1>
             <ul>
                 {my_list.map((item) => {
@@ -21,6 +25,7 @@ const ListPage = () => {
                 })}
             </ul>
         </div>
+        </>
     );
 
 }
